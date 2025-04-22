@@ -1,18 +1,10 @@
+import java.util.*;
+
 class Solution {
     public int solution(int[] numbers) {
-        int answer = Integer.MIN_VALUE;;
+        int length = numbers.length;
+        Arrays.sort(numbers);
         
-        for(int i = 0; i < numbers.length; i++) {
-            if(i == numbers.length - 1) {
-                break;
-            }
-            
-            for(int j = i + 1 ; j < numbers.length; j++) {
-                if(numbers[i] * numbers[j] > answer) {
-                    answer = numbers[i] * numbers[j];
-                }
-            }
-        }
-        return answer;
+        return Math.max(numbers[0] * numbers[1], numbers[length -2] * numbers[length -1]);
     }
 }
